@@ -10,12 +10,11 @@ from zhipuai import ZhipuAI
 st.set_page_config(page_title="鲜知AI - 冰箱管理助手", page_icon="🥬", layout="centered")
 
 # 你的 API Key
-if "zhipu_api_key" in st.secrets:
-    api_key = st.secrets["zhipu_api_key"]   # 云端用
-else:
-    api_key = "ecae48cc62534dfcae75df338bb2b317.lXkS1XX9D55RXa9z"   # 本地测试用
+# 代码会自动处理：在本地它找 secrets.toml，在云端它找 Secrets 面板
+api_key = st.secrets["ZHIPU_API_KEY"]
 
 client = ZhipuAI(api_key=api_key)
+
 
 st.markdown("""
     <style>
